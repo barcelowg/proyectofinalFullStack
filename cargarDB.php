@@ -3,7 +3,7 @@
 // Datos para la conexion a la base de datos
 $servername = "localhost";
 $username = "c2081732_climasl";
-$password = "fumabuDA00";
+$password = "12345678";
 $dbname = "c2081732_climasl";
 
 // Crea conexion
