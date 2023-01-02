@@ -1,0 +1,48 @@
+
+<?php
+// Datos para la conexion a la base de datos
+$servername = "localhost";
+$username = "c2081732_climasl";
+$password = "12345678";
+$dbname = "c2081732_climasl";
+
+// Crea conexion
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Chequea conexion
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+
+// Cargar los registros
+$stmt = $conn->prepare("INSERT INTO resumendia (Fecha, TempMax, TempMin, HumMax, HumMin, PresMax, PresMin, DirVientoMax, DirVientoMin, VientoMax, VientoMin, DirVieProm, Rafagas, LluvHoy, LluvAyer, LluvMes, LluvA)  
+                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+$stmt->bind_param("sssssssssssssssss",$Fecha, $TempMax, $TempMin, $HumMax, $HumMin, $PresMax, $PresMin, $DirVientoMax, $DirVientoMin, $VientoMax, $VientoMin, $DirVieProm, $Rafagas, $LluvHoy, $LluvAyer, $LluvMes, $LluvA);
+
+// Seteo de parametros Meteobridge a cargar
+$Fecha = "[YYYY]-[MM]-[DD]";
+$TempMax = "[th0temp-dmax]";
+$TempMin = "[th0temp-dmin]";
+$HumMax = "[th0hum-dmax=.0]";
+$HumMin = "[th0hum-dmin=.0]";
+$PresMax = "[thb0press-dmax=i.2]";
+$PresMin = "[thb0press-dmin=i.2]";
+$DirVientoMax = "[wind0dir-dmax=endir]";
+$DirVientoMin = "[wind0dir-dmin=endir]";
+$VientoMax = "[wind0avgwind-dmax=kmh.1:--]";
+$VientoMin = "[wind0avgwind-dmin=kmh.1:--]";
+$DirVieProm = "[wind0dir-avg10=endir]";
+$Rafagas = "[wind0wind-dmax=kmh.1:--]";
+$LluvHoy = "[rain0total-sumday=i.2]";
+$LluvAyer = "[rain0total-ydaysum=]";
+$LluvMes = "[rain0total-monthsum=]";
+$LluvA = "[rain0total-yearsum=]";
+
+$stmt->execute();
+
+echo "Registro cargado correctamente";
+
+$stmt->close();
+$conn->close();
+?>

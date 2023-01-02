@@ -1,0 +1,65 @@
+:root{
+    --bs-body-bg: rgb(114, 109, 109);
+    --bs-link-color: #6e3a3a;
+    --bs-link-hover-color: #46433b;
+    
+  }
+
+body {
+    padding: 20px;
+    background-image: url(../img/fondo.JPG);
+    background-size: cover;
+}
+
+p {
+    font-size: 30px;
+    text-align: center;
+}
+
+div {
+    border-radius: 10px;
+    gap: 10px;
+}
+.row {
+    justify-content: center;
+}
+
+span {
+    
+    text-align: center;
+    font-size: 14px;
+}
+li {
+    list-style:none;
+}
+
+ul {
+    justify-content: center;
+}
+
+footer {
+    text-align: center;
+    padding-top: 30px;
+}
+.page-item.active .page-link {
+    background-color: rgba(187, 175, 5, 0.068) !important;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.page-link {
+    color: rgb(78, 74, 74) !important;
+}
+.navbar-collapse .navbar-nav{
+    justify-content: center;
+}
+a:link, a:visited, a:active {
+    text-decoration:none;
+}
+
+div.dt-buttons {
+    float: right;
+    padding: 10px;
+}
+img {
+    justify-content: center;
+}

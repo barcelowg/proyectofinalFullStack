@@ -1,0 +1,109 @@
+<!-- Título -->
+    <div class="container mt-3 ">
+        <div class="mt-2 p-2 bg-transparent text-dark ">
+            <h3>Inicio</h3> 
+            <span>En esta sección se muestran valores registrados en la localidad de <a target="_blank" href="https://www.google.com.ar/maps/place/Estaci%C3%B3n+Meteorol%C3%B3gica+de+IAMOFM/@-33.8805725,-59.8807454,16z/data=!4m5!3m4!1s0x0:0x6478ee5e22348eaf!8m2!3d-33.880572!4d-59.876368">Santa Lucia,</a> provincia de Buenos Aires; proporcionados por una Estación Meteorológica Automática WH-1081.</span>
+        </div>
+
+    <br>
+
+<!-- Contenido -->
+    <!-- Tarjetas 1-->
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <!-- Temperatura -->
+            <div class="col-sm-4 col-lg-3 p-3 bg-secondary bg-opacity-10 text-dark">
+                <p><i class="fas fa-temperature-high"></i>  Temperatura [th0temp-act]°C</p>
+                <ul>
+                    <li>Sensación térmica: [th0heatindex-act]°C</li>
+                    <li>Punto de rocío: [th0dew-act]°C</li>
+                    <li>Máxima temperatura: [th0temp-dmax]°C</li>
+                    <li>Mínima temperatura:[th0temp-dmin]°C</li>
+                </ul>
+            </div>
+            <!-- Humedad -->
+            <div class="col-sm-4 col-lg-3 p-3 bg-secondary bg-opacity-10 text-dark">
+                <p><i class="fas fa-tint"></i>  Humedad <br>[th0hum-act]%</p>
+                    <ul>
+                        <li>Máxima humedad: [th0hum-dmax]%</li>
+                        <li>Mínima humedad: [th0hum-dmin]%</li>
+                        <li>Base de nubes: #if#[th0temp-act.1:0.0]>[th0dew-act.1:0.0]#then#{*([th0temp-act.1:0.0]-[th0dew-act.1:0.0])*121.92*0}#else#0#fi# m</li>
+                    </ul>
+            </div>
+            <!-- Viento -->
+            <div class="col-sm-4 col-lg-3 p-3 bg-secondary bg-opacity-10 text-dark">
+                <p><i class="fas fa-wind"></i> Viento<br>[wind0avgwind-act=kmh.1:--]km/h</p>
+                    <ul>
+                        <li>Velocidad (ráfaga): [wind0wind-act=kmh.1:--] km/h</li>
+                        <li>Dirección: [wind0dir-act=endir] </li> 
+                    </ul>
+            </div>
+            </div>
+        </div>
+
+    <!-- Tarjeras 2 -->
+    <div class="container-fluid mt-4">
+            <div class="row">
+                <!-- Lluvia -->
+                <div class="col-sm-4 col-lg-3 p-3 bg-secondary bg-opacity-10 text-dark">
+                    <p><i class="fas fa-cloud-showers-heavy"></i> Lluvia<br> [rain0total-daysum]mm</p>
+                    <ul>
+                        <li>Lluvia de hoy: [rain0total-daysum]mm</li>
+                        <li>Lluvia del mes: [rain0total-monthsum]mm</li>
+                        <li>Lluvia de esta hora:[rain0total-hoursum]mm</li>
+                        <li>Ritmo de lluvia: [rain0rate-act]mm/hora</li>
+                        <li>Lluvia del año: [rain0total-yearsum]mm</li>
+                            
+                    </ul>
+                </div>
+                <!-- Presión -->
+                <div class="col-sm-4 col-lg-3 p-3 bg-secondary bg-opacity-10 text-dark">
+                    <p><i class="fas fa-tachometer-alt"></i> Presión<br> [thb0press-act]hPa</p>
+                    <ul>
+                        <li>Máxima Presión: [thb0press-dmax]hPa</li>
+                        <li>Mínima Presión: [thb0press-dmin]hPa</li>
+                    </ul>
+                </div>
+                <!-- Ayer -->
+                <div class="col-sm-4 col-lg-3 p-3 bg-secondary bg-opacity-10 text-dark">
+                    <p><i class="fas fa-cloud-sun-rain"></i> AYER<br></p>
+                    <ul>
+                        <li>Máxima temperatura: [th0temp-ydmax]°C</li>
+                        <li>Mínima temperatura:[th0temp-ydmin]°C</li>
+                        <li>Máxima Presión: [thb0press-ydmax]hPa</li>
+                        <li>Mínima Presión: [thb0press-ydmin]hPa</li>
+                        <li>Lluvia total: [rain0total-ydmax]mm</li>
+                        <li>Velocidad del viento: [wind0avgwind-ydmax=kmh.1:--] km/h</li>
+                        <li>Ráfagas de viento: [wind0wind-ydmax=kmh.1:--]km/h</li>
+                            
+                        </ul>
+                </div>
+
+            </div>
+    </div>
+    
+    <hr>
+
+    <!-- Datos del día -->
+    <div class="container-fluid mt-3">
+        <div class="row">
+            <div class="col-sm-2 p-2 bg-transparent"><strong>Salida del sol:</strong> [mbsystem-sunrise]</div>
+            <div class="col-sm-2 p-2 bg-transparent"><strong>Puesta del sol:</strong> [mbsystem-sunset]</div>
+            <div class="col-sm-2 p-2 bg-transparent"><strong>Duración del día:</strong> [mbsystem-daylength]</div>
+            <div class="col-sm-2 p-2 bg-transparent"><strong>Puesta de la luna:</strong> [mbsystem-moonrise]</div>
+            <div class="col-sm-2 p-2 bg-transparent"><strong>Salida de la luna:</strong> [mbsystem-moonrise]</div>
+        </div>
+    </div>
+
+    <hr>
+    
+    <!-- Datos de actualización -->
+    <div class="container-fluid mt-2">
+        <div class="row">
+            <div class="col-sm-5 p-1 bg-transparent"><span>Actualizado el <strong>[DD]-[MM]-[YYYY]   [hh]:[mm]</strong> por Software:<a href="http://www.meteobridge.com" target="_blank">MeteoBridge</a> vv[mbsystem-swversion]</span></div>
+            <div class="col-sm-5 p-1 bg-transparent"><span>Latitud [mbsystem-latitude] Longitud [mbsystem-longitude] Altitud [mbsystem-altitude]</span></div>
+        </div>
+    </div>
+    
+    <hr>
+    
